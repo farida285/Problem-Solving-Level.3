@@ -2,13 +2,13 @@
 #include "MyLib.h"
 #include <iostream>
 using namespace std ;
-enum enWhatCount {smallLetters=0,capitalLetters,allChar};
+enum enWhatCount {smallLetters=0,capitalLetters,allLetters};
 
-unsigned int CountInString(string & myText,enWhatCount whatCount=enWhatCount::allChar){
+unsigned int CountInString(string & myText,enWhatCount whatCount=enWhatCount::allLetters){
     unsigned int count =0 ;
     for(unsigned int i=0;i<myText.size();i++){
         
-      if(whatCount == enWhatCount::allChar && mystring::MyIsAlpha(myText[i])){
+      if(whatCount == enWhatCount::allLetters && mystring::MyIsAlpha(myText[i])){
             count++;
        }else if(mystring::MyIsUpper(myText[i])&&whatCount==enWhatCount::capitalLetters){
             count++ ;
