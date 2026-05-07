@@ -5,12 +5,12 @@ using namespace std ;
 enum enWhatCount {smallLetters=0,capitalLetters,allChar};
 
 unsigned int CountInString(string & myText,enWhatCount whatCount=enWhatCount::allChar){
-    if(whatCount==enWhatCount::allChar){
-        return (myText.size());
-    }
     unsigned int count =0 ;
     for(unsigned int i=0;i<myText.size();i++){
-        if(mystring::MyIsUpper(myText[i])&&whatCount==enWhatCount::capitalLetters){
+        
+      if(whatCount == enWhatCount::allChar && mystring::MyIsAlpha(myText[i])){
+            count++;
+       }else if(mystring::MyIsUpper(myText[i])&&whatCount==enWhatCount::capitalLetters){
             count++ ;
         }else if(mystring::MyIsLower(myText[i])&&whatCount==enWhatCount::smallLetters){
             count++ ;
