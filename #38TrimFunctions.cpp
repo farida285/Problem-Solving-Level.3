@@ -20,8 +20,8 @@ string  TrimLeft (const string &s1){
 }
 
 string  TrimRight (const string &s1){
- unsigned int size =s1.length();
-    for(unsigned int i =size-1 ;i>=0;i--){
+  int size =s1.length();
+    for( int i =size-1 ;i>=0;i--){
         if(s1[i] != ' '){
             return (s1.substr(0,i+1));
         }
