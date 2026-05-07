@@ -50,11 +50,11 @@ string LowerAllString (string text){
    }
    return text;
 }
-enum enWhatCount {smallLetters=0,capitalLetters,allChar};
-unsigned int CountInString(string & myText,mystring::enWhatCount whatCount=enWhatCount::allChar){
+enum enWhatCount {smallLetters=0,capitalLetters,allLetters};
+unsigned int CountInString(string & myText,mystring::enWhatCount whatCount=enWhatCount::allLetters){
     unsigned int count =0 ;
     for(unsigned int i=0;i<myText.size();i++){
-       if(whatCount == mystring::enWhatCount::allChar && mystring::MyIsAlpha(myText[i])){
+       if(whatCount == mystring::enWhatCount::allLetters && mystring::MyIsAlpha(myText[i])){
             count++;
        }else if(mystring::MyIsUpper(myText[i])&&whatCount==mystring::enWhatCount::capitalLetters){
             count++ ;
