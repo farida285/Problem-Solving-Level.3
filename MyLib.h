@@ -15,7 +15,7 @@ bool MyIsLower(const char letter){
   
 }
  bool  MyIsAlpha(char c){
-    return (MyIsLower(c) ||  MyIsUpper(c));
+    return (mystring::MyIsLower(c) ||  mystring::MyIsUpper(c));
 }
 
 char MyToUpper(char letter){
