@@ -14,6 +14,10 @@ bool MyIsLower(const char letter){
  return(letter>='a'&&letter<='z');
   
 }
+ bool  MyIsAlpha(char c){
+    return (MyIsLower(c) ||  MyIsUpper(c));
+}
+
 char MyToUpper(char letter){
     if(letter>='a'&&letter<='z'){
         letter -= 32;
@@ -48,14 +52,13 @@ string LowerAllString (string text){
 }
 enum enWhatCount {smallLetters=0,capitalLetters,allChar};
 unsigned int CountInString(string & myText,mystring::enWhatCount whatCount=enWhatCount::allChar){
-    if(whatCount==enWhatCount::allChar){
-        return (myText.size());
-    }
     unsigned int count =0 ;
     for(unsigned int i=0;i<myText.size();i++){
-        if(mystring::MyIsUpper(myText[i])&&whatCount==enWhatCount::capitalLetters){
+       if(whatCount == mystring::enWhatCount::allChar && mystring::MyIsAlpha(myText[i])){
+            count++;
+       }else if(mystring::MyIsUpper(myText[i])&&whatCount==mystring::enWhatCount::capitalLetters){
             count++ ;
-        }else if(mystring::MyIsLower(myText[i])&&whatCount==enWhatCount::smallLetters){
+        }else if(mystring::MyIsLower(myText[i])&&whatCount==mystring::enWhatCount::smallLetters){
             count++ ;
         }
     }
